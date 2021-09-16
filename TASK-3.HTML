@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <br>
+        <h1>SIGN-IN CLUBFACTORY TO BUY THINGS</h1>
+      <br>
+      <div id="form">
+        <form>
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control form-data" id="Name">
+          </div>
+          <div class="form-group">
+            <label for="DOB">DOB</label>
+            <input type="text" class="form-control form-data" id="DOB">
+          </div>
+          <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="text" class="form-control form-data" id="Age">
+          </div>
+          <div class="form-group">
+            <label for="mobile no">mobile no</label>
+            <input type="text" class="form-control form-data" id="mobile no">
+          </div>
+          <div class="form-group">
+            <label for="Prime ID">Prime ID</label>
+            <input type="text" class="form-control form-data" id="prime ID">
+          </div>
+          <button type="button" class="btn btn-primary" onclick="send_data()">Submit</button>
+        </form>
+      </div>
+
+      <!-- Optional if you want to give a completion feedback! -->
+      <div id="completion-msg" style="display: none;">
+        Thank you for completing this form!
+      </div>
+
+    </div>
+
+    <script>
+      function send_data(){
+        var form_data = document.getElementsByClassName("form-data"); //retrieve filled form data
+        var i;
+        var data = [];
+        for(i=0; i<form_data.length; i++){
+          data.push(form_data[i].value);
+        }
+        google.script.run.saveData(data); // send to google app script
+        document.getElementById("form").style.display = "none"; // make form invisible
+        document.getElementById("completion-msg").style.display = "block"; // Optional if you want to give a completion feedback!
+      }
+    </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CLUBFACTORY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: red;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {  
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {  
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>CLUB FACTORY</h1>
+  <p>CLUB FACTORY DELIVER WHAT YOU WANT.</p>
+</div>
+
+<div class="navbar">
+  <a href="https://www.clubfactory.net.in/2021/08/club-factory-mens-t-shirt-up-to-70-off.html">Home</a>
+  <a href="https://www.clubfactory.net.in/2021/06/club-factory-women-dress.html">Womens fashion</a>
+  <a href="https://www.clubfactory.net.in/p/mens-fashion.html">Mens fashion</a>
+  <a href="https://www.clubfactory.net.in/p/shoes-mens-and-womens.html" class="right">Footwares</a>
+</div>
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+   
+    /* Remove the jumbotron's default bottom margin */
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#c1 {
+  background-color:yellow;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+.c2 {
+  background-color: blue;
+  color: white;
+  padding: 30px;
+}
+<style>
+table, th, td {
+  border: 1px solid red;
+  width: 50%;}
+th,td {
+  border: 1px solid black;
+  text-align:left;
+  padding: 8px;
+  background-color:lightgrey ;}
+</style>
+</style>
+</head>
+<form id="c1" action="/action_page.php">
+<div >
+<h1 id="c1" ><i>WELCOME TO OUR SHOPPING PAGE</i></h1>
+<p>select your item</p>
+  <label for="cars">🔎</label>
+  <input list="cars" type="text">
+  <datalist id="cars">
+    <option value="Electronics"></option>
+    <option value="Clothes"></option>
+    <option value="Furniture"></option>
+    <option value="Books"></option>
+  </datalist><br><br>
+  </div>
+  <input type="submit">
+</form><h1>
+</h1>
+<iframe src="1.html" name="Kidsfashion" height="1000px" width="32%" title="Iframe Example" unscroll><img src="kidsfashion.jpg" alt="kidsfashion" width="104" height="142"></iframe>
+<iframe src="2.html" name="iframe_a" height="1000px" width="32%" title="Iframe Example"></iframe>
+<iframe src="3.html" name="iframe_a" height="1000px" width="32%" title="Iframe Example"></iframe>
+<iframe src="4.html" name="iframe_a" height="1000px" width="32%" title="Iframe Example"></iframe>
+<iframe src="5.html" name="iframe_a" height="1000px" width="32%" title="Iframe Example"></iframe>
+<iframe src="1 t.html" name="iframe_a" height="1000px" width="32%" title="Iframe Example"></iframe>
+</html>
